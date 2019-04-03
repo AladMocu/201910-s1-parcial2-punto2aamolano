@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Heroe} from "./heroe";
 import {Observable} from "rxjs";
 import { HttpClient } from '@angular/common/http';
+import {Heroedetail} from "./heroedetail";
 
 
 const API_URL = "../../assets/";
@@ -19,8 +20,8 @@ export class HeroesService {
     return this.http.get<Heroe[]>(API_URL + heroes);
   }
 
-  getHeroeDetail(HeroeID): Observable<Heroe> {
-    return this.http.get<Heroe>(API_URL + "data-" + Heroe+".json");
+  getHeroeDetail(HeroeID): Observable<Heroedetail> {
+    return this.http.get<Heroedetail>(API_URL + "heroe" + Heroe+".json");
   }
 
 

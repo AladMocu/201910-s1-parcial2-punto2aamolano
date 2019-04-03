@@ -1,5 +1,19 @@
 <app-header></app-header>
 <div class="container">
   <!-- Agregar acá -->
-  <app-listar-heroes></app-listar-heroes>
+  <app-listar-heroes (herodetail)="showDetail()"></app-listar-heroes>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" #detailModal>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+       <app-hero-detail #detailComponent ></app-hero-detail>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
 </div>

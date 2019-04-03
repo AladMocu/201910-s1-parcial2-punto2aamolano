@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Heroe} from "../heroe";
 import {HeroesService} from "../heroes.service"
 import {Observable} from "rxjs";
@@ -11,13 +11,16 @@ import {Observable} from "rxjs";
 export class ListarHeroesComponent implements OnInit {
 
   heroes:Heroe[];
-
   maxheroe:Heroe;
+
+  @Output() herodetail = new EventEmitter<number>();
+
   constructor(private heroesService:HeroesService) { }
 
   ngOnInit() {
-  this.heroesService.getHeroes().subscribe(value => this.heroes=value);
+    this.heroesService.getHeroes().subscribe(value => this.heroes=value);
     this.getMaxPower()
+
   }
 
   getMaxPower():void {
@@ -35,5 +38,10 @@ export class ListarHeroesComponent implements OnInit {
     });
   }
 
+
+  getDetail(hero:number):void
+  {
+    this.herodetail.emit(hero);
+  }
 
 }
