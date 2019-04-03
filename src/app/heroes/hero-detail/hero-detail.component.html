@@ -1,3 +1,28 @@
-<p>
-  hero-detail works!
-</p>
+Name:{{heroDetail.name}}
+
+Description: {{heroDetail.text}}
+
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Year</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let movie of movies">
+  <tr>
+    <th scope="row">1</th>
+    <td>{{movie.id}}</td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>{{movie.name}}</td>
+  </tr>
+  <tr>
+    <th scope="row">3</th>
+    <td>{{movie.year}}</td>
+  </tr>
+  </tbody>
+</table>

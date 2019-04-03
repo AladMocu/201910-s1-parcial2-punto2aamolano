@@ -1,5 +1,7 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-import {$} from "protractor";
+
+
+declare let $: any;
 
 @Component({
   selector: 'my-app',
