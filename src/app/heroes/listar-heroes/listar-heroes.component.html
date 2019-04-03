@@ -1,0 +1,17 @@
+<b>Mayor poder: </b>{{maxheroe?.power}}
+<br>
+<div class="card-deck">
+  <div *ngFor="let heroe of heroes" style="margin: 2vmin">
+<div class="card" style=" width: 18rem">
+  <img src="{{heroe.image}}" class="card-img-top" alt="..." style="width: 287px">
+  <div class="card-body">
+    <h5 class="card-title">{{heroe.name}}</h5>
+    <ul>
+      <li>Inteligencia: {{heroe.wisdom}}</li>
+      <li>Poder: {{heroe.power}}</li>
+    </ul>
+    <a href="#" class="btn btn-primary">Ver perfil</a>
+  </div>
+</div>
+  </div>
+</div>
